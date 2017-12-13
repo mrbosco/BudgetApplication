@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+body {
+    color: #555;
+    font-family: 'Fira Sans';
+    font-size: 16px;
+    position: relative;
+    height: 100vh;
+    font-weight: 400;
+}
+
+.right { float: right; }
+.red { color: #FF5049 !important; }
+.red-focus:focus { border: 1px solid #FF5049 !important; }
+
+.top {
+    height: 40vh;
+    background: #1D6AD2;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.budget {
+    position: absolute;
+    width: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.mainTitle {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.moneyTotal {
+    font-weight: 300;
+    font-size: 46px;
+    text-align: center;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+.moneyIncome,
+.moneyExpenses {
+    padding: 12px;
+    text-transform: uppercase;
+}
+
+.moneyIncome {
+    margin-bottom: 10px;
+    background-color: #5D96DF;
+}
+
+.moneyExpenses {
+    background-color: #E88992;
+}
+
+.moneyIncome--text,
+.moneyExpenses--text {
+    float: left;
+    font-size: 13px;
+    color: #444;
+    margin-top: 2px;
+}
+
+.moneyIncome--value,
+.moneyExpenses--value {
+    letter-spacing: 1px;
+    float: left;
+}
+
+.moneyIncome--percentage,
+.moneyExpenses--percentage {
+    float: left;
+    width: 34px;
+    font-size: 11px;
+    padding: 3px 0;
+    margin-left: 10px;
+}
+
+.moneyExpenses--percentage {
+    background-color: rgba(255, 255, 255, 0.2);
+    text-align: center;
+    border-radius: 3px;
+}
+
+.add {
+    padding: 14px;
+    border-bottom: 1px solid #e7e7e7;
+    background-color: #f7f7f7;
+}
+
+.addMain {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.addType {
+    width: 55px;
+    border: 1px solid #e7e7e7;
+    height: 44px;
+    font-size: 18px;
+    color: inherit;
+    background-color: #fff;
+    margin-right: 10px;
+    font-weight: 300;
+    transition: border 0.3s;
+}
+
+.budgetDesc,
+.budgetVal {
+    border: 1px solid #e7e7e7;
+    background-color: #fff;
+    color: inherit;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 12px 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+    transition: border 0.3s;
+}
+
+.budgetDesc { width: 400px;}
+.budgetVal { width: 100px;}
+
+.budgetBtn {
+    font-size: 35px;
+    background: none;
+    border: none;
+    color: #5D96DF;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.1;
+    margin-left: 10px;
+}
+
+.budgetBtn:active { transform: translateY(2px); }
+
+.addType:focus,
+.budgetDesc:focus,
+.budgetVal:focus {
+    outline: none;
+    border: 1px solid #5D96DF;
+}
+
+.budgetBtn:focus { outline: none; }
+
+/***** LISTS *****/
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 60px 0;
+}
+
+.income {
+    width: 475px;
+    margin-right: 100px;
+}
+
+.expenses {
+    width: 475px;
+}
+
+@media screen and (max-width: 1050px){
+    .income{
+        margin-right: 0;
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 670px){
+    .budgetDesc{
+        width: 250px;
+    }
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.incomeName { color: #5D96DF; }
+.expensesName { color: #E88992; }
+
+.item {
+    padding: 13px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.item:first-child { border-top: 1px solid #e7e7e7; }
+.item:nth-child(even) { background-color: #f7f7f7; }
+
+.itemDesc {
+    float: left;
+}
+
+.itemVal {
+    float: left;
+    transition: transform 0.3s;
+}
+
+.percentageBox {
+    float: left;
+    margin-left: 20px;
+    transition: transform 0.3s;
+    font-size: 11px;
+    background-color: #FFDAD9;
+    padding: 3px;
+    border-radius: 3px;
+    width: 32px;
+    text-align: center;
+}
+
+.income .itemVal,
+.income .removeBtn--btn {
+    color: #5D96DF;
+}
+
+.expenses .itemVal,
+.expenses .percentageBox,
+.expenses .removeBtn--btn {
+    color: #E88992;
+}
+
+
+.removeBtn {
+    float: left;
+}
+
+.removeBtn--btn {
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    display: none;
+}
+
+.removeBtn--btn:focus { outline: none; }
+.removeBtn--btn:active { transform: translateY(2px); }
+
+.item:hover .removeBtn--btn { display: block; }
+.item:hover .itemVal { transform: translateX(-20px); }
+.item:hover .percentageBox { transform: translateX(-20px); }
+
+
+.unpaid {
+    background-color: #FFDAD9 !important;
+    cursor: pointer;
+    color: #E88992;
+
+}
+
+.unpaid .percentageBox { box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1); }
+.unpaid:hover .itemDesc { font-weight: 900; }
