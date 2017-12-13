@@ -1,2 +1,3 @@
-# ToDo
-My implementation of To-Do list in native JS
+# :moneybag: Budget app
+
+![screenshot](https://i.imgur.com/2jGzTLU.png)
